@@ -20,10 +20,13 @@ Branches allow developers to work on new features, bug fixes, or improvements se
 ## What happens if two people edit the same file on different branches?
 If two people edit the same file on different branches, Git keeps their changes separate until the branches are merged. If they modify different parts of the file, Git can usually merge the changes automatically. However, if they modify the same lines or make conflicting changes, a merge conflict may occur. In that case, developers need to review the conflicting changes and manually resolve them before completing the merge.
 
-# Writing Meaningful Commit Messages
+# Writing Meaningful Commit Messages Reflection
 
 ## What makes a good commit message?
+I think a good commit message should be clear, concise, and descriptive enough for someone to understand what changes were made without having to look through the code. It should explain the purpose of the changes without including unnecessary details. Using a consistent format, such as prefixes like docs: or fix:, can also make the commit history easier to read and understand.
 
 ## How does a clear commit message help in team collaboration?
+Clear commit messages help team members understand what changes have been made to a project and why. When multiple developers are working on the same codebase, meaningful commit messages make it easier to track progress, review changes, and identify when certain features or bug fixes were introduced. They also help developers understand each other's work without having to ask for explanations every time.
 
 ## How can poor commit messages cause issues later?
+Poor commit messages can make it difficult to understand what was changed or why a particular change was made. For example, vague messages such as "small fix" don't provide much useful information. This can become frustrating when developers need to look back through the commit history to identify bugs, review previous changes, or understand how a feature was implemented. Overly detailed messages can also make the history harder to read, especially when the important information is buried in unnecessary explanations.
