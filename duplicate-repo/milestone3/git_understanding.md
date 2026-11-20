@@ -19,3 +19,11 @@ Branches allow developers to work on new features, bug fixes, or improvements se
 
 ## What happens if two people edit the same file on different branches?
 If two people edit the same file on different branches, Git keeps their changes separate until the branches are merged. If they modify different parts of the file, Git can usually merge the changes automatically. However, if they modify the same lines or make conflicting changes, a merge conflict may occur. In that case, developers need to review the conflicting changes and manually resolve them before completing the merge.
+
+# Writing Meaningful Commit Messages
+
+## What makes a good commit message?
+
+## How does a clear commit message help in team collaboration?
+
+## How can poor commit messages cause issues later?
