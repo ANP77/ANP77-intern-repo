@@ -214,3 +214,45 @@ Duplicated code can make a project harder to maintain because the same logic is 
 
 ## How did refactoring improve maintainability?
 Refactoring duplicated code into reusable functions can improve maintainability by reducing repetition and keeping related logic in one place. This makes future updates easier because changes only need to be made once rather than in multiple sections. It also makes the code more consistent, organised, and easier to understand.
+
+# Refactoring Code for Simplicity
+
+## Example of overly complicated code
+
+### Before refactoring
+```javascript
+function checkDiscount(age, isMember) {
+  let result = false;
+
+  if (age >= 18) {
+    if (isMember === true) {
+      result = true;
+    } else {
+      result = false;
+    }
+  } else {
+    if (isMember === true) {
+      result = true;
+    } else {
+      result = false;
+    }
+  }
+
+  return result;
+}
+```
+
+### Refactored code
+```javascript
+function checkDiscount(isMember) {
+  return isMember;
+}
+```
+
+## Reflection
+
+### What made the original code complex?
+For this task, I used a JavaScript function called checkDiscount that determines whether someone qualifies for a discount based on their membership status. The original code contained multiple nested if-else statements, repeated conditions, and unnecessary variable assignments. Although the function worked, the additional conditions made the code longer and more difficult to follow than necessary.
+
+### How did refactoring improve it?
+I refactored the function by removing the unnecessary conditions and variable assignments and returning the membership status directly. This reduced the amount of code while maintaining the same functionality. The refactored version is simpler, easier to read, and easier to maintain because it focuses only on the condition needed to determine the result.
