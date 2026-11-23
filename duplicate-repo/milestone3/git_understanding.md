@@ -74,3 +74,14 @@ I think a well-structured PR should have a clear and descriptive title that expl
 
 ## What did you learn from reviewing an open-source PR?
 Although I already have experience creating PRs, merging changes, and deleting branches from my university projects, reviewing an open-source PR helped me better understand how code reviews work in larger development teams. I learned how developers discuss changes, provide feedback, and suggest improvements before approving a PR. It also showed me the importance of clear communication and collaboration when working on a shared codebase.
+
+# Understand git bisect Reflection
+
+## What does git bisect do?
+git bisect is a Git command that helps developers identify which commit introduced a bug. It uses a binary search process to narrow down the commit history by comparing working and broken versions of the project. Developers mark commits as good or bad based on whether the issue exists until Git identifies the first bad commit. In my experiment, I used git bisect to identify the commit where I intentionally changed the addition operation to subtraction in a simple calculator.
+
+## When would you use it in a real-world debugging situation?
+I would use git bisect when a feature that previously worked suddenly stops working, but I'm not sure which change caused the problem. This can be especially useful when multiple developers have made several commits to the project. By identifying a known working commit and a broken commit, I can use git bisect to narrow down where the issue was introduced and investigate the changes made in that commit.
+
+## How does it compare to manually reviewing commits?
+Manually reviewing commits can take a lot of time, especially when there are many commits. git bisect is more efficient because it uses binary search to eliminate large portions of the commit history with each test, rather than checking every commit individually. However, developers still need to test the selected commits and investigate the identified changes to understand and fix the actual problem.
