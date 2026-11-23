@@ -298,4 +298,37 @@ Comments should be avoided when they simply repeat what the code already explain
 
 For this task, I used a JavaScript function that calculates a discounted total. Initially, the code contained unclear variable names and comments that only described individual calculations. I improved it by using more descriptive names and replacing the unnecessary comments with a single comment explaining the discount rule. This made the code easier to understand without relying on excessive comments.
 
+# Handling Errors & Edge Cases
+
+## Original function without error handling
+```javascript
+function divide(a, b) {
+  return a / b;
+}
+```
+
+## Refactored function
+```javascript
+function divide(a, b) {
+  if (!Number.isFinite(a) || !Number.isFinite(b)) {
+    throw new Error('Inputs must be valid numbers.');
+  }
+
+  if (b === 0) {
+    throw new Error('Cannot divide by zero.');
+  }
+
+  return a / b;
+}
+```
+
+## Reflection
+
+### What was the issue with the original code?
+For this task, I used a simple JavaScript function that divides two numbers. The original function performed the calculation without checking whether the inputs were valid. This meant that dividing by zero or providing non-numeric values could produce unexpected results such as Infinity or NaN.
+
+### How does handling errors improve reliability?
+Handling errors improves reliability by preventing invalid inputs from producing unexpected results and making problems easier to identify and debug. I refactored the function by adding guard clauses to check whether the inputs were valid numbers and to prevent division by zero. Instead of continuing with invalid inputs, the function now throws an error with a clear message. This makes the code more reliable and easier to understand.
+
+
 
