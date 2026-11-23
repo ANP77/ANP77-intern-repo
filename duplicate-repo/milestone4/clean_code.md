@@ -16,6 +16,7 @@ Consistency means following the same coding style, naming conventions, and forma
 Efficiency means writing code that performs its tasks effectively without wasting unnecessary time or resources. Developers should consider performance when choosing algorithms and data structures, especially when working with large amounts of data. However, it is also important to avoid premature optimization that makes the code unnecessarily complicated.
 
 ## Example messy code
+```javascript
 def calc(x):
     t=0
     for i in x:
@@ -26,12 +27,13 @@ def calc(x):
 
 a=[50,30,40]
 print(calc(a))
-
+```
 
 ### Why is this code difficult to read?
 This code is difficult to read because it uses unclear variable names such as `x`, `t`, and `a`, which do not explain their purpose. The function name `calc` is also too general. The code uses inconsistent spacing and includes hardcoded values without explaining what they represent. Although the program works, it could be difficult for another developer to understand or modify.
 
 ## Rewrite the example messy code in a cleaner way
+```javascript
 DISCOUNT_RATE = 0.10
 
 DISCOUNT_THRESHOLD = 100
@@ -49,6 +51,7 @@ item_prices = [50, 30, 40]
 total_price = calculate_total(item_prices)
 
 print(total_price)
+```
 
 ### Why is the rewritten code better?
 The rewritten code is easier to understand because it uses meaningful variable and function names, such as `calculate_total`, `subtotal`, and `item_prices`. It also follows consistent formatting and uses constants for the discount rate and threshold instead of hardcoded values. Using the built-in `sum()` function makes the code simpler and avoids an unnecessary loop. These improvements make the code more readable, maintainable, and easier to modify in the future.
@@ -63,3 +66,55 @@ To test ESLint, I created a simple JavaScript file with a function that calculat
 
 ## Did formatting the code make it easier to read?
 Yes, using Prettier made the code easier to read by automatically correcting spacing and making the formatting more consistent. It made the code look cleaner and more organised. I also found it useful because it reduces the need for manual formatting and helps maintain a consistent coding style.
+
+# Naming Variables & Functions
+
+## Example code
+
+### Code with unclear variables
+```javascript
+function calc(a, b) {
+  let x = a * b;
+  let y = x * 0.1;
+  return x - y;
+}
+
+let p = 50;
+let q = 3;
+let z = calc(p, q);
+```
+
+### Refactored code
+```javascript
+function calculateDiscountedTotal(itemPrice, quantity) {
+  const subtotal = itemPrice * quantity;
+  const discountAmount = subtotal * 0.1;
+
+  return subtotal - discountAmount;
+}
+
+const itemPrice = 50;
+const quantity = 3;
+const finalPrice = calculateDiscountedTotal(itemPrice, quantity);
+```
+
+## Variable changed before and after
+| Before | After |
+| ------ | ----- |
+| calc | calculateDiscountedTotal |
+| a | itemPrice |
+| b | quantity |
+| x | subtotal |
+| y | discountAmount |
+| z | finalPrice |
+
+## Reflection
+
+### What makes a good variable or function name?
+A good variable or function name should be clear, descriptive, and meaningful so that other developers can easily understand its purpose. Variable names should explain what kind of data they store, while function names should describe what the function does. Following consistent naming conventions, such as camelCase in JavaScript, also makes the code easier to read and maintain.
+
+### What issues can arise from poorly named variables?
+Poorly named variables can make code confusing and difficult to understand, especially when working with unfamiliar code. For example, names like a, b, or x do not explain what the variables represent. This can make debugging and modifying the code more difficult because developers may need to spend extra time understanding how the variables are used.
+
+### How did refactoring improve code readability?
+For this task, I created a simple JavaScript function that calculates the total price after applying a discount. Initially, I used unclear variable and function names such as calc, a, b, x, and y. I then refactored the code using more descriptive names such as calculateDiscountedTotal, itemPrice, quantity, subtotal, and discountAmount. These changes made the code easier to follow because the names clearly explain what each variable represents and what the function does. It also made the code more understandable without needing additional comments.
