@@ -256,3 +256,46 @@ For this task, I used a JavaScript function called checkDiscount that determines
 
 ### How did refactoring improve it?
 I refactored the function by removing the unnecessary conditions and variable assignments and returning the membership status directly. This reduced the amount of code while maintaining the same functionality. The refactored version is simpler, easier to read, and easier to maintain because it focuses only on the condition needed to determine the result.
+
+# Commenting & Documentation
+
+## Example of poorly commented code
+
+### Before improving comments
+```javascript
+// Function to calculate
+function calc(p, q) {
+  // Multiply p and q
+  const x = p * q;
+
+  // Multiply x by 0.1
+  const y = x * 0.1;
+
+  // Subtract y from x
+  return x - y;
+}
+```
+
+### Improved code and comments
+```javascript
+function calculateDiscountedTotal(itemPrice, quantity) {
+  const subtotal = itemPrice * quantity;
+
+  // Apply a 10% discount to the total purchase price.
+  const discountAmount = subtotal * 0.1;
+
+  return subtotal - discountAmount;
+}
+``` 
+
+## Reflection
+
+### When should you add comments?
+Comments should be added when the purpose or reasoning behind a section of code is not immediately clear. They are especially useful for explaining complex logic, important decisions, business rules, or unusual behaviour that other developers may not easily understand. Comments can also be used to document functions, including their parameters and return values, to help other developers understand how to use them.
+
+### When should you avoid comments and instead improve the code?
+Comments should be avoided when they simply repeat what the code already explains. For example, adding a comment to describe a basic calculation or assignment does not provide much additional information. In these situations, using meaningful variable and function names or simplifying the code can make it easier to understand without unnecessary comments.
+
+For this task, I used a JavaScript function that calculates a discounted total. Initially, the code contained unclear variable names and comments that only described individual calculations. I improved it by using more descriptive names and replacing the unnecessary comments with a single comment explaining the discount rule. This made the code easier to understand without relying on excessive comments.
+
+
