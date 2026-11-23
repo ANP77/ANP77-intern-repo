@@ -206,3 +206,11 @@ Breaking down large functions into smaller, single-purpose functions makes code 
 
 ### How did refactoring improve the structure of the code?
 For this task, I used a JavaScript function called processOrder that calculates the subtotal, applies discounts based on customer type, determines shipping costs, and calculates the final total. Initially, all these calculations were handled within a single function, which made the code longer and more difficult to follow. I refactored the code into smaller functions, including calculateSubtotal, calculateDiscount, and calculateShipping, each responsible for a specific calculation. The processOrder function now combines these smaller functions to calculate the final result. This made the code more organised and easier to understand, as each function has a clear responsibility. It also makes future changes easier because individual calculations can be modified without rewriting the entire function.
+
+# Avoiding Code Duplication Reflection
+
+## What were the issues with duplicated code?
+Duplicated code can make a project harder to maintain because the same logic is repeated in multiple places. When changes are needed, developers have to update each occurrence separately, which can be time-consuming and increase the risk of errors or inconsistencies.
+
+## How did refactoring improve maintainability?
+Refactoring duplicated code into reusable functions can improve maintainability by reducing repetition and keeping related logic in one place. This makes future updates easier because changes only need to be made once rather than in multiple sections. It also makes the code more consistent, organised, and easier to understand.
