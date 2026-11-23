@@ -62,7 +62,7 @@ The rewritten code is easier to understand because it uses meaningful variable a
 Code formatting is important because it makes code easier to read, understand, and maintain. Following consistent formatting and coding conventions also helps developers collaborate more effectively, especially when working on the same project. It also makes it easier to identify mistakes and understand the structure of the code.
 
 ## What issues did the linter detect?
-To test ESLint, I created a simple JavaScript file with a function that calculates the total price after applying a discount. I intentionally included some coding issues to see how ESLint would identify them. When I first ran ESLint, it detected 7 errors, including using var instead of const, declaring unused variables and functions, and using let for variables that were never reassigned. After fixing these issues, ESLint detected another error because console was not recognised in the configuration. I resolved this by configuring ESLint to recognise Node.js global variables. After making these changes, I ran ESLint again, and it completed without any errors.
+To test ESLint, I took a simple JavaScript file with a function that calculates the total price after applying a discount. When I first ran ESLint, it detected 7 errors, including using var instead of const, declaring unused variables and functions, and using let for variables that were never reassigned. After fixing these issues, ESLint detected another error because console was not recognised in the configuration. I resolved this by configuring ESLint to recognise Node.js global variables. After making these changes, I ran ESLint again, and it completed without any errors.
 
 ## Did formatting the code make it easier to read?
 Yes, using Prettier made the code easier to read by automatically correcting spacing and making the formatting more consistent. It made the code look cleaner and more organised. I also found it useful because it reduces the need for manual formatting and helps maintain a consistent coding style.
@@ -117,4 +117,92 @@ A good variable or function name should be clear, descriptive, and meaningful so
 Poorly named variables can make code confusing and difficult to understand, especially when working with unfamiliar code. For example, names like a, b, or x do not explain what the variables represent. This can make debugging and modifying the code more difficult because developers may need to spend extra time understanding how the variables are used.
 
 ### How did refactoring improve code readability?
-For this task, I created a simple JavaScript function that calculates the total price after applying a discount. Initially, I used unclear variable and function names such as calc, a, b, x, and y. I then refactored the code using more descriptive names such as calculateDiscountedTotal, itemPrice, quantity, subtotal, and discountAmount. These changes made the code easier to follow because the names clearly explain what each variable represents and what the function does. It also made the code more understandable without needing additional comments.
+For this task, I used a simple JavaScript function that calculates the total price after applying a discount. Initially, the code had unclear variable and function names such as calc, a, b, x, and y. I then refactored the code using more descriptive names such as calculateDiscountedTotal, itemPrice, quantity, subtotal, and discountAmount. These changes made the code easier to follow because the names clearly explain what each variable represents and what the function does. It also made the code more understandable without needing additional comments.
+
+# Writing Small, Focused Functions
+
+## Example code
+
+### Code with long, complex function
+```javascript
+function processOrder(items, customerType) {
+  let subtotal = 0;
+
+  for (const item of items) {
+    subtotal += item.price * item.quantity;
+  }
+
+  let discount = 0;
+
+  if (customerType === 'premium') {
+    discount = subtotal * 0.2;
+  } else if (customerType === 'regular') {
+    discount = subtotal * 0.1;
+  }
+
+  const discountedTotal = subtotal - discount;
+
+  let shipping = 10;
+
+  if (discountedTotal > 100) {
+    shipping = 0;
+  }
+
+  const finalTotal = discountedTotal + shipping;
+
+  return {
+    subtotal,
+    discount,
+    shipping,
+    finalTotal,
+  };
+}
+```
+
+### Refactored code
+```javascript
+function calculateSubtotal(items) {
+  return items.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
+}
+
+function calculateDiscount(subtotal, customerType) {
+  if (customerType === 'premium') {
+    return subtotal * 0.2;
+  }
+
+  if (customerType === 'regular') {
+    return subtotal * 0.1;
+  }
+
+  return 0;
+}
+
+function calculateShipping(discountedTotal) {
+  return discountedTotal > 100 ? 0 : 10;
+}
+
+function processOrder(items, customerType) {
+  const subtotal = calculateSubtotal(items);
+  const discount = calculateDiscount(subtotal, customerType);
+  const discountedTotal = subtotal - discount;
+  const shipping = calculateShipping(discountedTotal);
+
+  return {
+    subtotal,
+    discount,
+    shipping,
+    finalTotal: discountedTotal + shipping,
+  };
+}
+```
+
+## Reflection
+
+### Why is breaking down functions beneficial?
+Breaking down large functions into smaller, single-purpose functions makes code easier to read, understand, and maintain. Each function focuses on a specific task, making it easier to identify errors, test individual parts of the code, and make changes without affecting unrelated functionality. It also improves code reusability, as smaller functions can be used in different parts of a project.
+
+### How did refactoring improve the structure of the code?
+For this task, I used a JavaScript function called processOrder that calculates the subtotal, applies discounts based on customer type, determines shipping costs, and calculates the final total. Initially, all these calculations were handled within a single function, which made the code longer and more difficult to follow. I refactored the code into smaller functions, including calculateSubtotal, calculateDiscount, and calculateShipping, each responsible for a specific calculation. The processOrder function now combines these smaller functions to calculate the final result. This made the code more organised and easier to understand, as each function has a clear responsibility. It also makes future changes easier because individual calculations can be modified without rewriting the entire function.
