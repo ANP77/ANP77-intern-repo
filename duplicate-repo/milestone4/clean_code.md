@@ -52,3 +52,14 @@ print(total_price)
 
 ### Why is the rewritten code better?
 The rewritten code is easier to understand because it uses meaningful variable and function names, such as `calculate_total`, `subtotal`, and `item_prices`. It also follows consistent formatting and uses constants for the discount rate and threshold instead of hardcoded values. Using the built-in `sum()` function makes the code simpler and avoids an unnecessary loop. These improvements make the code more readable, maintainable, and easier to modify in the future.
+
+# Code Formatting & Style Guides Reflection
+
+## Why is code formatting important?
+Code formatting is important because it makes code easier to read, understand, and maintain. Following consistent formatting and coding conventions also helps developers collaborate more effectively, especially when working on the same project. It also makes it easier to identify mistakes and understand the structure of the code.
+
+## What issues did the linter detect?
+To test ESLint, I created a simple JavaScript file with a function that calculates the total price after applying a discount. I intentionally included some coding issues to see how ESLint would identify them. When I first ran ESLint, it detected 7 errors, including using var instead of const, declaring unused variables and functions, and using let for variables that were never reassigned. After fixing these issues, ESLint detected another error because console was not recognised in the configuration. I resolved this by configuring ESLint to recognise Node.js global variables. After making these changes, I ran ESLint again, and it completed without any errors.
+
+## Did formatting the code make it easier to read?
+Yes, using Prettier made the code easier to read by automatically correcting spacing and making the formatting more consistent. It made the code look cleaner and more organised. I also found it useful because it reduces the need for manual formatting and helps maintain a consistent coding style.
