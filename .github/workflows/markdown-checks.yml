@@ -7,6 +7,10 @@ jobs:
   markdown-checks:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: duplicate-repo
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,3 +29,5 @@ jobs:
       - name: Run spell checking
         if: success() || failure()
         run: npx cspell "*.md"
+
+        
