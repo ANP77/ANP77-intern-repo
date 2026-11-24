@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "language": "en-GB",
+  "words": [
+    "GitHub",
+    "ESLint",
+    "Prettier",
+    "Husky",
+    "CSpell"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "package-lock.json"
+  ]
+}
