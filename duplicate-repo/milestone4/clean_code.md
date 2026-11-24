@@ -330,5 +330,12 @@ For this task, I used a simple JavaScript function that divides two numbers. The
 ### How does handling errors improve reliability?
 Handling errors improves reliability by preventing invalid inputs from producing unexpected results and making problems easier to identify and debug. I refactored the function by adding guard clauses to check whether the inputs were valid numbers and to prevent division by zero. Instead of continuing with invalid inputs, the function now throws an error with a clear message. This makes the code more reliable and easier to understand.
 
+# Writing Unit Tests for Clean Code Reflection
+
+## How do unit tests help keep code clean?
+Unit tests help keep code clean by checking whether individual functions work as expected. They make it easier to identify errors, verify that changes do not break existing functionality, and improve code reliability. Unit tests also make refactoring safer because developers can test whether the code still produces the expected results after making changes.
+
+## What issues did you find while testing?
+For this task, I used Jest to write unit tests for a JavaScript function called divide. I tested the function with valid numbers, negative numbers, division by zero, and invalid inputs. The tests helped me verify that the function performs calculations correctly and handles invalid inputs by throwing appropriate errors. All four tests passed, showing that the function behaved as expected for the tested cases.
 
 
