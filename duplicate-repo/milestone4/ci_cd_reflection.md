@@ -1,0 +1,13 @@
+# Static Analysis Checks in CI/CD Reflection
+
+## What is the purpose of CI/CD?
+The purpose of CI/CD is to automate the process of integrating, testing, and delivering code changes. Continuous Integration (CI) helps developers identify issues early by automatically running tests and checks when changes are made to a shared repository. Continuous Delivery and Continuous Deployment (CD) help streamline the software release process. Together, these practices reduce manual work, improve software quality, and make development more efficient and reliable.
+
+## How does automating style checks improve project quality?
+Automating style checks helps maintain consistent coding and documentation standards across a project. For this task, I configured a GitHub Actions workflow to automatically run Markdown linting and spell checks on pull requests. When I opened a test PR, the Markdown linting check identified several formatting issues, including incorrect indentation, missing blank lines, and incorrect heading levels. This demonstrated how automated checks can help identify issues before changes are merged, reduce manual review efforts, and improve the readability and consistency of a project.
+
+## What are some challenges with enforcing checks in CI/CD?
+One challenge is configuring the automated checks correctly according to the project's structure and requirements. During this task, I initially encountered an issue because my workflow file was located in a subfolder rather than the root of the repository. I resolved this by moving the workflow file to the correct location and updating its working directory. Other challenges include dealing with existing formatting issues, configuring appropriate rules, and preventing overly strict checks from unnecessarily slowing down development.
+
+## How do CI/CD pipelines differ between small projects and large teams?
+CI/CD pipelines in small projects are generally simpler and may only include basic linting, automated testing, and deployment. In larger teams, pipelines are often more complex because multiple developers contribute to the same codebase. They may include additional processes such as integration testing, security scanning, code quality checks, approval processes, and deployment to different environments. Larger teams also require more coordination and stricter standards to ensure that changes are integrated safely and consistently.
