@@ -1,4 +1,4 @@
-## Step 1: Duplicate this repository (including the issues)
+# Step 1: Duplicate this repository (including the issues)
 
 By the end of this process, you will:
 
