@@ -5,4 +5,9 @@ The setup process was relatively straightforward as I followed the official Tail
 
 Resource: https://tailwindcss.com/docs/installation/using-vite
 
+# Understanding Components & Props Reflection 
 
+## Why are components important in React?
+Components are important in React because they allow developers to break down a user interface into smaller, reusable and manageable parts. This reduces code duplication and makes the code easier to understand, maintain and update. Components can also receive data through props, allowing the same component to display different content dynamically. 
+
+This task helped me understand how components and props improve code reusability and flexibility in React.
