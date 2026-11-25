@@ -11,3 +11,11 @@ Resource: https://tailwindcss.com/docs/installation/using-vite
 Components are important in React because they allow developers to break down a user interface into smaller, reusable and manageable parts. This reduces code duplication and makes the code easier to understand, maintain and update. Components can also receive data through props, allowing the same component to display different content dynamically. 
 
 This task helped me understand how components and props improve code reusability and flexibility in React.
+
+# Handling State & User Input Reflection 
+
+## What happens if we modify state directly instead of using setState?
+Modifying state directly instead of using a state setter does not notify React that the state has changed. As a result, React may not re-render the component, causing the user interface to display outdated values. To observe this behaviour, I replaced setCount(count + 1) with count = count + 1 in the counter component. This caused an error because count was declared as a constant. When I clicked the increment button, the displayed count did not update.
+
+This task helped me understand the importance of using state setters to ensure that changes in state are reflected dynamically in the user interface.
+

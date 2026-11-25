@@ -1,9 +1,13 @@
 import  HelloWorld from './HelloWorld';
+import Counter from './Counter';
 
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[lightyellow] text-4xl font-bold text-orange-600">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-[lightyellow] text-4xl font-bold text-orange-600">
       <HelloWorld name="Focus Bear" />
+      <div className="text-center [&_button]:bg-orange-500 [&_button]:text-white [&_button]:px-4 [&_button]:py-2 [&_button]:rounded-lg [&_button]:mt-4">
+        <Counter />
+      </div>
     </div>
   );
 }
