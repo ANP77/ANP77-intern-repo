@@ -19,3 +19,13 @@ Modifying state directly instead of using a state setter does not notify React t
 
 This task helped me understand the importance of using state setters to ensure that changes in state are reflected dynamically in the user interface.
 
+# Working with Lists & User Input Reflection 
+
+## What are some common issues when working with lists in React?
+1. Putting the key on the wrong element: The key should be assigned to the outermost element returned by .map(), rather than an element nested inside it.
+2. Generating keys during rendering: Using Math.random() or generating a new UUID inside .map() causes React to recreate list elements on every render instead of reusing them.
+3. Duplicate keys: Using the same key for multiple items can cause unexpected rendering behaviour. Each item should have a unique and stable key.
+4. Mutating the array directly: Using items.push(x) followed by setItems(items) may prevent React from re-rendering because the array reference remains unchanged. Instead, a new array should be created using setItems([...items, x]).
+5. Forgetting the empty state: An empty list can make the interface appear incomplete or confusing. Displaying a short message when no items are available can improve the user experience.
+
+Resource: https://shailpar.com/blog/react-lists-and-keys

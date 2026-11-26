@@ -1,5 +1,6 @@
 import  HelloWorld from './HelloWorld';
 import Counter from './Counter';
+import Form from './Form';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className="text-center [&_button]:bg-orange-500 [&_button]:text-white [&_button]:px-4 [&_button]:py-2 [&_button]:rounded-lg [&_button]:mt-4">
         <Counter />
       </div>
+      <Form />
     </div>
   );
 }
