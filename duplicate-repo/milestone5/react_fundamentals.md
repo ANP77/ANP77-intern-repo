@@ -29,3 +29,13 @@ This task helped me understand the importance of using state setters to ensure t
 5. Forgetting the empty state: An empty list can make the interface appear incomplete or confusing. Displaying a short message when no items are available can improve the user experience.
 
 Resource: https://shailpar.com/blog/react-lists-and-keys
+
+# Navigation with React Router Reflection 
+
+## What are the advantages of client-side routing?
+- Faster navigation: Only the necessary components are rendered or updated instead of reloading the entire page.
+- Improved performance: Lazy loading can be used to load components only when needed, reducing the initial loading time.
+- Improved user experience: Animations and transitions can be implemented when switching between different components, making navigation smoother.
+- Seamless single-page application experience: Different views are displayed dynamically without refreshing the current page or loading a separate HTML document.
+
+Resource: https://www.pluralsight.com/resources/blog/guides/pros-and-cons-of-client-side-routing-with-react

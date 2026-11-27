@@ -15,7 +15,7 @@ function ListForm() {
 
     return createElement(
         'div',
-        { className: 'text-xl' },
+        null,
         createElement(
             'form',
             { onSubmit: handleSubmit, className: 'flex gap-2' },
