@@ -4,6 +4,7 @@ import Form from './Form';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
+import EffectDemo from './EffectDemo';
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
           </nav>
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<><Home /><EffectDemo /></>} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-        <div className="flex flex-col items-center gap-4 mt-70">
+        <div className="flex flex-col items-center gap-4 mt-30">
           <HelloWorld name="Focus Bear" />
           <div className="text-center [&_button]:bg-orange-500 [&_button]:text-white [&_button]:px-4 [&_button]:py-2 [&_button]:rounded-lg [&_button]:mt-4">
             <Counter />
