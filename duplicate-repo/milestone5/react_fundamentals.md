@@ -39,3 +39,21 @@ Resource: https://shailpar.com/blog/react-lists-and-keys
 - Seamless single-page application experience: Different views are displayed dynamically without refreshing the current page or loading a separate HTML document.
 
 Resource: https://www.pluralsight.com/resources/blog/guides/pros-and-cons-of-client-side-routing-with-react
+
+
+# Understanding React Hooks: useEffect
+
+## When should you use useEffect instead of handling logic inside event handlers?
+useEffect should be used when a component needs to synchronise with external systems, such as managing timers, subscriptions, event listeners or fetching data in response to changes in state or props. Event handlers are more suitable when an action is triggered by a specific user interaction, such as clicking a button or submitting a form.
+
+## What happens if you don’t provide a dependency array?
+If a dependency array is not provided, useEffect runs after every committed render of the component, which can result in unnecessary effect executions. An empty dependency array ([]) allows the effect to run on mount, while an array containing specific dependencies allows the effect to run on mount and whenever those dependencies change.
+
+## How can improper use of useEffect cause performance issues?
+- Unnecessary effect executions: Omitting the dependency array or using unstable dependencies can cause effects to run more frequently than necessary.
+- Infinite rendering loops: Updating state inside an effect can cause continuous re-rendering if the state update repeatedly triggers the effect.
+- Unnecessary API requests: Repeatedly fetching the same data can increase network usage and slow down the application.
+- Memory leaks: Failing to implement appropriate cleanup functions can leave timers, subscriptions or event listeners active even after a component unmounts.
+
+Resource: https://medium.com/@tucecifcii/useeffect-and-performance-optimizations-a8b36e14e75e
+
