@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import EffectDemo from './EffectDemo';
+import MemoDemo from './MemoDemo';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           </nav>
         </div>
         <Routes>
-          <Route path="/" element={<><Home /><EffectDemo /></>} />
+          <Route path="/" element={<><Home /><EffectDemo /><MemoDemo /></>} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
         <div className="flex flex-col items-center gap-4 mt-30">

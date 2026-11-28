@@ -41,7 +41,7 @@ Resource: https://shailpar.com/blog/react-lists-and-keys
 Resource: https://www.pluralsight.com/resources/blog/guides/pros-and-cons-of-client-side-routing-with-react
 
 
-# Understanding React Hooks: useEffect
+# Understanding React Hooks useEffect Reflection 
 
 ## When should you use useEffect instead of handling logic inside event handlers?
 useEffect should be used when a component needs to synchronise with external systems, such as managing timers, subscriptions, event listeners or fetching data in response to changes in state or props. Event handlers are more suitable when an action is triggered by a specific user interaction, such as clicking a button or submitting a form.
@@ -57,3 +57,17 @@ If a dependency array is not provided, useEffect runs after every committed rend
 
 Resource: https://medium.com/@tucecifcii/useeffect-and-performance-optimizations-a8b36e14e75e
 
+# Optimizing Performance with useMemo Reflection 
+
+## How does useMemo improve performance?
+useMemo improves performance by caching the result of a calculation between renders. Instead of performing the calculation every time a component re-renders, React reuses the cached result if the dependencies have not changed. This reduces unnecessary computations and can improve application responsiveness, particularly when working with large datasets or computationally expensive operations.
+
+## When should you avoid using useMemo?
+- Simple calculations: When a calculation is inexpensive and can be performed quickly, the overhead of memoisation may outweigh its benefits.
+- Frequently changing dependencies: If the dependencies change on every render, the calculation will still be performed repeatedly, reducing the benefits of memoisation.
+- Unnecessary optimisation: Overusing useMemo can increase memory usage and code complexity without providing significant performance improvements.
+
+## What happens if you remove useMemo from your implementation?
+Without useMemo, the expensive calculation would run every time the component re-renders, even when its dependency remains unchanged. In my implementation, I included two buttons to demonstrate this behaviour. With useMemo, clicking the "Re-render Component" button updates the test count without repeating the expensive calculation, whereas clicking the "Increase List by 100" button changes the list size and triggers recalculation. If useMemo is removed, clicking either button would cause the expensive calculation to run again. Although the calculated result would remain the same when only the test count changes, unnecessary computations would be performed, potentially reducing performance.
+
+Resource: https://react.dev/reference/react/useMemo
